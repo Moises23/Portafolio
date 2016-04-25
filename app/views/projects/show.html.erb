@@ -1,0 +1,16 @@
+<div id="post_show_content" class="skinny_wrapper wrapper_padding">
+				<header>
+					<p class="date"><%= @project.created_at.strftime('%A, %B %d') %></p>
+						<h1><%= @project.title %></h1>
+							<hr>
+				</header>
+				<div id="content">
+					<%= simple_format @project.description %>
+				<div class="button_wrapper">
+					<a href="<%= @project.link %>" class="project_button" target="_blank">Visita <%= @project.title %></a>
+				</div>
+				</div>
+				<%= link_to "Editar", edit_project_path(@project) %>
+				<%= link_to "Eliminar", project_path(@project),method: :delete, data: {confirm: "Esta seguoro de Eliminar este Projecto"} %>
+				<hr>
+</div>
